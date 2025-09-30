@@ -8,19 +8,19 @@ int main ()
     cin.tie(0);
     cout.tie(0);
     
-    int t; cin >> t;
-    getchar();
-    while (t--)
-    {
-    	string s; getline(cin, s);
-    	int cnt = 0;
-    	for (int i = 0; i < s.length(); i++)
-    	{
-    		for (int j = 0; j < s.length; j++)
-    		{
-    			if (s[i] == s[j]) cnt++;
-			}
+    int t;
+	cin >> t;
+	while(t--)
+	{
+		string a;
+		cin >> a;
+		int n = a.size(), s = a.size(), b[26] = {};
+		for(int i = 0; i < n; i++)
+		{
+			b[a[i]-'a']++;
 		}
-		cout << cnt << endl;
+		for(int i = 0;i < 26; i++) s+=b[i] * (b[i] - 1) / 2;
+		cout << s <<endl;
 	}
 }
+
